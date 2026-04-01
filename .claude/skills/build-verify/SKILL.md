@@ -36,3 +36,10 @@ Triggered by: "build", "verify", "check compilation".
 - Do NOT fix errors by adding `@ts-ignore` or `any`
 - Do NOT modify test files to fix build errors
 - If 3 attempts fail — stop and report to user
+
+## How to verify
+
+- Build output contains no errors or warnings (exit code 0)
+- `dist/` or relevant output directory was updated (check timestamps)
+- Run `yarn tsc --noEmit` to confirm type-check passes independently
+- If fixes were applied: confirm the fix does not introduce `any` or `@ts-ignore` by running `grep -r "ts-ignore\|: any" <changed-file>`

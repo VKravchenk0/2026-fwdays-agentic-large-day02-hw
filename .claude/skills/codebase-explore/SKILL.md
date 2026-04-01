@@ -32,3 +32,10 @@ Triggered by: "explore", "investigate", "how does X work?"
 
 - READ-ONLY — do not modify any files during exploration
 - Verify findings against actual code, not assumptions
+
+## How to verify
+
+- All key files listed in the summary actually exist (`Glob` or `ls` to confirm)
+- Data flow description can be traced step-by-step through the actual source (no invented intermediaries)
+- Dependencies listed match actual `import` statements in the files (grep to confirm)
+- No files were modified: `git status` should show a clean working tree after the skill runs

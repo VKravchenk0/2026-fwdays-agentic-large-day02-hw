@@ -50,3 +50,10 @@ Output format:
 **[SUGGESTION]** — optional improvement  
 
 If no issues found in a category, write `✓ OK`. End with a one-line overall verdict.
+
+## How to verify
+
+- Every **[CRITICAL]** finding references a specific file and line number (not a vague description)
+- Security checks were applied to all changed files, not just the first one in the diff
+- `git diff HEAD` was used as the input source — confirm no files were silently skipped
+- The verdict matches the severity of findings: CRITICAL issues must not yield a passing verdict

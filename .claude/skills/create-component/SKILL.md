@@ -67,3 +67,12 @@ List the created files with their full paths and remind the user to:
 1. Define real props in `{ComponentName}Props`
 2. Replace the placeholder `<div>` with actual markup
 3. Add meaningful test cases
+
+## How to verify
+
+- Both files exist: `{kebab-case}.tsx` and `{kebab-case}.test.tsx` in the target directory
+- Component uses named export (`export const`) — confirm no `export default` is present
+- Props type uses `type` keyword, not `interface`, and is named `{ComponentName}Props`
+- No `any` or `@ts-ignore` in either generated file
+- Run `yarn tsc --noEmit` to confirm the new files type-check cleanly
+- Run `yarn test {kebab-case}.test.tsx` to confirm the scaffold test passes

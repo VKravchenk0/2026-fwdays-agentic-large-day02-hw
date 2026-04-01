@@ -39,3 +39,10 @@ Triggered by: "update memory bank", "sync docs",
 - Do NOT add speculative information — only verified facts
 - Do NOT exceed 200 lines per file — summarize if needed
 - Verify ALL technical claims against actual code
+
+## How to verify
+
+- Each updated file exists in `docs/memory/` and is under 200 lines (`wc -l docs/memory/*.md`)
+- Every technical claim (file paths, function names, package names) can be confirmed against actual source code
+- Run `git diff docs/memory/` and spot-check that no manually curated content was silently removed
+- Summary accurately reflects what `git diff --stat HEAD~5` shows — no invented or omitted changes
